@@ -23,6 +23,7 @@ export class ShortenerController {
   @Post()
   async shortenUrl(@Body() body): Promise<Object> {
     try {
+      console.log(body);
       const slug = await this.shortenerService.createUniqueUrl(body.text);
       return { data: slug };
     } catch (e) {
