@@ -5,11 +5,9 @@ import Header from "../components/Header.tsx";
 import Main from "../components/Main.tsx";
 
 export default function Home() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { toggleColorMode } = useColorMode();
 
-  const toggleColorTheme = () => {
-    toggleColorMode();
-  };
+  const toggleColorTheme = () => toggleColorMode();
 
   return (
     <>
