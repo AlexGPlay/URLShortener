@@ -1,0 +1,95 @@
+.themeToggle {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: all ease 300ms;
+  opacity: 0.75;
+}
+
+.themeToggle:hover {
+  opacity: 1;
+}
+
+.themeToggle::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0;
+  z-index: -1;
+}
+
+.themeToggle:hover::after {
+  opacity: 0.15;
+}
+
+.themeToggle::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  transform: rotate(45deg);
+  transition: all ease 300ms;
+}
+
+.themeToggle.dark {
+  background-color: var(--chakra-colors-white);
+}
+
+.themeToggle.dark::before,
+.themeToggle.dark::after {
+  background-color: var(--chakra-colors-white);
+}
+
+.themeToggle.light {
+  background-color: var(--chakra-colors-gray-800);
+}
+
+.themeToggle.light::before,
+.themeToggle.light::after {
+  background-color: var(--chakra-colors-gray-800);
+}
+
+.toggleShape {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggleShape::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-85%, -50%);
+  width: 14px;
+  height: 14px;
+  transition: all ease 300ms;
+}
+
+.themeToggle.dark .toggleShape {
+  background-color: var(--chakra-colors-gray-800);
+}
+
+.themeToggle.light .toggleShape {
+  background-color: var(--chakra-colors-white);
+}
+
+.themeToggle.dark .toggleShape::before {
+  transform: translate(-50%, -50%);
+  background-color: var(--chakra-colors-white);
+}
+
+.themeToggle.light .toggleShape::before {
+  background-color: var(--chakra-colors-gray-800);
+}
