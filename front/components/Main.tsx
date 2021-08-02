@@ -17,6 +17,17 @@ export default function Main() {
   const { colorMode } = useColorMode();
   const toast = useToast();
 
+  React.useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("error"))
+      toast({
+        title: "Error",
+        description: "An error has occurred",
+        duration: 2500,
+        isClosable: true,
+        status: "error",
+      });
+  }, []);
+
   const handleTextChange = React.useCallback((evt) => setText(evt.target.value), []);
   const handleCopy = React.useCallback(() => {
     inputRef.current?.focus();
